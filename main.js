@@ -27,12 +27,12 @@ function draw()
     
     if (object_status != "")
     {
+        objectDetector.detect(video, gotResult);
+        r = random(255);
+        g = random(255);
+        b = random(255);
         for (i = 0; i < objects.length; i++)
         {
-            r = random(255);
-            g = random(255);
-            b = random(255);
-            objectDetector.detect(video, gotResult);
             document.getElementById("status").innerHTML = "Status: Object detected";
             document.getElementById("number_of_objects").innerHTML = "Number of objects detected are :"+ objects.length;
             fill(r,g,b)
